@@ -4,17 +4,16 @@ module.exports = (sequelize, DataTypes) => {
     name: DataTypes.STRING,
     code: DataTypes.STRING,
     startDate: DataTypes.STRING,
-    technologie: DataTypes.STRING
-  }, {
-    associate : function(models) {
-      // associations can be defined here
-      models.Mission.belongsTO(models.User,{
-        foreignKey:{
-          allowNull: false
-        }
-      })
-    }
+    technologie: DataTypes.STRING,
+    userId : DataTypes.INTEGER
   });
+
+  Mission.associate = function (models) {
+    Mission.belongsTo(models.User,{
+      foreignKey: 'id',
+      sourceKey: 'userId'
+    })
+  }
  
   return Mission;
 };

@@ -30,7 +30,7 @@ module.exports = {
       },
       isAdmin: {
         allowNull:false,
-        type: Sequelize.boolean
+        type: Sequelize.BOOLEAN
       },
       hasCompletedTutorial: {
         allowNull:false,

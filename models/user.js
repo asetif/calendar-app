@@ -8,14 +8,12 @@ module.exports = (sequelize, DataTypes) => {
     cost: DataTypes.DECIMAL,
     isAdmin: DataTypes.INTEGER,
     hasCompletedTutorial: DataTypes.INTEGER
-  }, {
-    classMethods:{
-      associate : function(models) {
-        // associations can be defined here
-        models.User.hasMany(models.Mission);
-      }
-    }
   });
   
+  User.associate = function (models) {
+      // associations can be defined here
+      User.hasMany(models.Mission);
+  }
+
   return User;
 };

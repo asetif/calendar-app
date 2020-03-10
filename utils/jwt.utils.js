@@ -25,7 +25,6 @@ module.exports = {
          if(token != null){
              
              try {
-                //console.log('eeeee')
                  var jwtToken =jwt.verify(token, JWT_SIGN_SECRET);
                 
                  if(jwtToken != null)
